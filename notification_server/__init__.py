@@ -1,4 +1,1 @@
-# Verizon	vtext.com
-# T-Mobile	tmomail.net
-# Sprint	messaging.sprintpcs.com
-# AT&T Wireless	txt.att.net
+from notification_server.notification_server import server
