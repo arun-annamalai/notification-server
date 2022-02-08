@@ -1,1 +1,1 @@
-from notification_server.notification_server import server
+from notification_server.notification_server import Server

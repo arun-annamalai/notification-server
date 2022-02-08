@@ -1,14 +1,18 @@
 import os
-from notification_server import server
+
+from notification_server import Server
 
 
 def print_hello():
+    notify = True
+    subject = "Contents"
     msg = "This message is sent from Python"
-    return True, msg
+    return notify, msg, subject
 
-notifier = server()
-notifier.register_email(os.environ['EMAIL1'], os.environ['EMAIL_PASS'])
-notifier.register_number("2488805628", "sprint")
+
+notifier = Server()
+notifier.register_emailer(os.environ['EMAIL'], os.environ['EMAIL_PASSWORD'])
+notifier.register_number(os.environ['NUMBER'], "sprint")
 
 notifier.minutely_job(func=print_hello)
 notifier.start()
